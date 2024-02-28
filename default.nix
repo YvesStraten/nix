@@ -25,14 +25,14 @@ in
       '';
     };
 
-    customConfig =
+    otherConfigs =
       mkOption
         {
           type = types.nullOr types.path;
           example = "./config";
           default = null;
           description = ''
-            Folder with chadrc.lua and other custom configuration
+            Folder with other configuration files that you wish to be added to `lua/custom`
           '';
         };
 
@@ -57,8 +57,8 @@ in
     programs.neovim.enable = true;
     programs.neovim.defaultEditor = mkIf cfg.defaultEditor true;
 
-    xdg.configFile."nvim/lua/custom" = mkIf (cfg.customConfig != null) {
-      source = cfg.customConfig;
+    xdg.configFile."nvim/lua/custom" = mkIf (cfg.otherConfigs != null) {
+      source = cfg.otherConfigs;
       recursive = true;
     };
 

@@ -52,8 +52,8 @@ Enables NvChad
 ### `defaultEditor`
 Sets your `$EDITOR` variable to be NvChad
 
-### `customConfig`
-Adds the specified custom folder with your configurations, e.g `chadrc.lua` it can be as many files as you need.
+### `otherConfigs`
+Folder with other configuration files that you wish to be added to `lua/custom`
 
 ### `chadrcContents` and `initLuaContents`
 Define the content of `charc.lua` and/or `init.lua`. This can either be lines, or you can import your files into the lines with `${builtins.readFile ./some-path}`
