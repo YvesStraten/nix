@@ -71,12 +71,12 @@ in
     };
 
     xdg.configFile."nvim/lua" = {
-      source = "${NvChad}/lua";
+      source = "${NvChad}/.config/nvim/lua";
       recursive = true;
     };
 
     xdg.configFile."nvim/init.lua" = {
-      source = "${NvChad}/init.lua";
+      source = "${NvChad}/.config/nvim/init.lua";
     };
   };
 }

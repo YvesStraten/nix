@@ -1,6 +1,13 @@
 # NvChad Nix/NixOS support
 This flake aims to support the Nix Package manager and the NixOS system.
 
+# Want to test NvChad out?
+Just use this command on flakes enabled system:
+
+``` bash
+nix run "github:NvChad/nix"
+```
+
 ## How to use it 
 Add the url of the repo to your `inputs`
 
