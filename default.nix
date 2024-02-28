@@ -1,6 +1,5 @@
 { lib
 , config
-, self
 , pkgs
 , ...
 }:
@@ -36,6 +35,22 @@ in
             Folder with chadrc.lua and other custom configuration
           '';
         };
+
+    chadrcContents = mkOption {
+      type = types.nullOr types.lines;
+      default = null;
+      description = ''
+        Contents to go into the chadrc.lua file
+      '';
+    };
+
+    initLuaContents = mkOption {
+      type = types.nullOr types.lines;
+      default = null;
+      description = ''
+        Contents to go into the init.lua file
+      '';
+    };
   };
 
   config = mkIf cfg.enable {
@@ -45,6 +60,14 @@ in
     xdg.configFile."nvim/lua/custom" = mkIf (cfg.customConfig != null) {
       source = cfg.customConfig;
       recursive = true;
+    };
+
+    xdg.configFile."nvim/lua/custom/chadrc.lua" = mkIf (cfg.chadrcContents != null) {
+      text = cfg.chadrcContents;
+    };
+
+    xdg.configFile."nvim/lua/custom/init.lua" = mkIf (cfg.initLuaContents != null) {
+      text = cfg.initLuaContents;
     };
 
     xdg.configFile."nvim/lua" = {
