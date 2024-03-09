@@ -1,13 +1,13 @@
 { stdenv, fetchFromGitHub, lib, makeWrapper, neovim }:
 stdenv.mkDerivation rec {
   pname = "NvChad-${version}";
-  version = "unstable-2024-03-05";
+  version = "unstable-2024-03-09";
 
   src = fetchFromGitHub {
     owner = "NvChad";
     repo = "NvChad";
-    rev = "13cce81d998630e46b1ad2d60dd10f3013726bb6";
-    sha256 = "sha256-0r1H0yO301LMsBwVO0Dec+I8LvaEuVaJ+2hkjNn6qtk=";
+    rev = "6fb5c313edc966f187c7483a16affaec0518b641";
+    sha256 = "sha256-U81M3RFMP7jKirxj3ROCsyqTRXGCrtN6VsPrewlPSLI=";
   };
 
   nativeBuildInputs = [ makeWrapper ];
